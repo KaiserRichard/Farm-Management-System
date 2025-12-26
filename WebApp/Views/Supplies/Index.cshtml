@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CoreBusiness.Supply>
+@{
+    ViewData["Title"] = "Quản lý Kho";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+            <h3 class="mb-0"><i class="fas fa-boxes"></i> Kho Vật tư</h3>
+            <a asp-action="Record" class="btn btn-dark shadow-sm">
+                <i class="fas fa-exchange-alt"></i> Nhập / Xuất kho
+            </a>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="ps-4">Tên vật tư</th>
+                            <th>Đơn vị</th>
+                            <th class="text-end">Số lượng tồn</th>
+                            <th class="text-end">Đơn giá</th>
+                            <th class="text-center pe-4">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">@item.Name</td>
+                                <td>@item.Unit</td>
+                                <td class="text-end fw-bold @(item.Quantity <= 5 ? "text-danger" : "")">
+                                    @item.Quantity
+                                </td>
+                                <td class="text-end text-muted">@item.Price.ToString("N0") đ</td>
+                                <td class="text-center pe-4">
+                                    @if (item.Quantity <= 5)
+                                    {
+                                        <span class="badge rounded-pill bg-danger shadow-sm">
+                                            <i class="fas fa-exclamation-circle"></i> Sắp hết
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge rounded-pill bg-success shadow-sm">
+                                            <i class="fas fa-check-circle"></i> An toàn
+                                        </span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

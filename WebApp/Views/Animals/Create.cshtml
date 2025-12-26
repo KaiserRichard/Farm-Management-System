@@ -1,0 +1,36 @@
+﻿@model CoreBusiness.Animal
+@{
+    ViewData["Title"] = "Thêm Vật nuôi";
+}
+
+<h2 class="mt-4">Thêm Vật nuôi mới</h2>
+<form asp-action="Create" method="post" class="card p-4 shadow-sm mt-3">
+    <div class="mb-3">
+        <label class="form-label">Chọn Trang trại</label>
+        <select asp-for="FarmId" class="form-select" asp-items="ViewBag.Farms">
+            <option value="">-- Vui lòng chọn trang trại --</option>
+        </select>
+        <span asp-validation-for="FarmId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Tên vật nuôi</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Species" class="form-label">Loài (Heo, Bò, Gà...)</label>
+        <input asp-for="Species" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label">Tuổi</label>
+        <input asp-for="Age" class="form-control" type="number" />
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Lưu lại</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy bỏ</a>
+    </div>
+</form>

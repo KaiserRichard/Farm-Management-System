@@ -1,0 +1,31 @@
+﻿@model CoreBusiness.Vaccination
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white d-flex justify-content-between">
+            <h3>Thêm Lịch Tiêm Mới</h3>
+            <a asp-action="Index" class="btn btn-light btn-sm">Quay lại</a>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Vật nuôi</label>
+                    <select asp-for="AnimalId" class="form-select" asp-items="ViewBag.Animals"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Loại Vaccine</label>
+                    <select asp-for="SupplyId" class="form-select" asp-items="ViewBag.Supplies"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ngày dự kiến tiêm</label>
+                    <input asp-for="ScheduledDate" type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ghi chú</label>
+                    <textarea asp-for="Note" class="form-control" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Tạo lịch tiêm</button>
+            </form>
+        </div>
+    </div>
+</div>

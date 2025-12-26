@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@{ ViewData["Title"] = "Cấp quyền"; }
+
+<div class="container mt-4">
+    <h3>Quản lý Quyền</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Email</td>
+                    <td>
+                        <form asp-action="Promote" method="post">
+                            <input type="hidden" name="userId" value="@user.Id" />
+                            <button type="submit" class="btn btn-danger">Cấp quyền Admin</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

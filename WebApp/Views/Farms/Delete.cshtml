@@ -1,0 +1,35 @@
+﻿@model CoreBusiness.Farm
+@{
+    ViewData["Title"] = "Xác nhận Xóa";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow">
+        <div class="card-header bg-danger text-white">
+            <h2 class="mb-0">Xác nhận Xóa Trang trại</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="text-danger mb-4">Bạn có chắc chắn muốn xóa vĩnh viễn trang trại này không?</h4>
+
+            <dl class="row">
+                <dt class="col-sm-3">Tên Trang trại:</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3">Địa chỉ:</dt>
+                <dd class="col-sm-9">@Model.Address</dd>
+
+                <dt class="col-sm-3">Chủ sở hữu:</dt>
+                <dd class="col-sm-9">@Model.OwnerName</dd>
+            </dl>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" name="farmId" value="@Model.FarmId" />
+
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Đồng ý Xóa
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </form>
+        </div>
+    </div>
+</div>
