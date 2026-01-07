@@ -7,4 +7,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CoreBusiness\CoreBusiness.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Administrative\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Administrative\" />
+  </ItemGroup>
 </Project>

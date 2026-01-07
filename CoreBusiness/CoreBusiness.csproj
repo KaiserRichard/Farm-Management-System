@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Administrative \" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Administrative \" />
+  </ItemGroup>
 </Project>
