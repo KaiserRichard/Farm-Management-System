@@ -96,6 +96,10 @@ builder.Services.AddTransient<UCFarms.IAddVaccinationUseCase, UCFarms.AddVaccina
 builder.Services.AddScoped<IDistrictRepository, DistrictSQLRepository>(); // Data access
 builder.Services.AddScoped<ViewDistrictsUseCase>();                      // Read-only business logic
 builder.Services.AddScoped<AddDistrictUseCase>();                        // Create business logic
+builder.Services.AddScoped<ICommuneRepository, CommuneSQLRepository>();
+builder.Services.AddScoped<ViewCommunesUseCase>();
+builder.Services.AddScoped<AddCommuneUseCase>();
+
 
 // === Dashboard ===
 builder.Services.AddTransient<UCFarms.IDashboardUseCase, UCFarms.DashboardUseCase>();

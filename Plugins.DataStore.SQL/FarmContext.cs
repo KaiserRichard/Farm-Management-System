@@ -26,6 +26,7 @@ namespace Plugins.DataStore.SQL
         // Government-level master data
         // -----------------------------
         public DbSet<District> Districts { get; set; }
+        public DbSet<Commune> Communes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
