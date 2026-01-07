@@ -1,5 +1,4 @@
 ﻿using CoreBusiness;
-using CoreBusiness.Entities.Administrative;
 using Microsoft.EntityFrameworkCore;
 
 namespace Plugins.DataStore.SQL

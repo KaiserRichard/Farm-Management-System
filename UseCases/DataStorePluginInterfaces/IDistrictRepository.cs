@@ -1,4 +1,4 @@
-﻿using CoreBusiness.Entities.Administrative;
+﻿using CoreBusiness;
 
 namespace UseCases.DataStorePluginInterfaces
 {

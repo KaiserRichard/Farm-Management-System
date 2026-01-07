@@ -1,7 +1,7 @@
+using CoreBusiness;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UseCases.Administrative;
-using CoreBusiness.Entities.Administrative;
 
 namespace WebApp.Controllers
 {

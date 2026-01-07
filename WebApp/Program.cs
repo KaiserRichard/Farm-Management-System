@@ -36,9 +36,14 @@ builder.Services.AddDbContext<FarmContext>(options =>
 // --------------------------------------------------
 // 2. IDENTITY & AUTHORIZATION
 // --------------------------------------------------
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
-        options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<FarmIdentityContext>();
+builder.Services
+    .AddIdentity<IdentityUser, IdentityRole>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+    })
+    .AddEntityFrameworkStores<FarmIdentityContext>()
+    .AddDefaultUI()              
+    .AddDefaultTokenProviders();
 
 builder.Services.AddAuthorization(options =>
 {

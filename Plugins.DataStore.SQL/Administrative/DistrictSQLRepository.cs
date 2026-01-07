@@ -1,4 +1,4 @@
-﻿using CoreBusiness.Entities.Administrative;
+﻿using CoreBusiness;
 using Microsoft.EntityFrameworkCore;
 using UseCases.DataStorePluginInterfaces;
 
@@ -15,12 +15,12 @@ namespace Plugins.DataStore.SQL.Administrative
 
         public async Task<IEnumerable<District>> GetAllAsync()
         {
-            return await context.Set<District>().AsNoTracking().ToListAsync();
+            return await context.Districts.AsNoTracking().ToListAsync();
         }
 
         public async Task AddAsync(District district)
         {
-            context.Set<District>().Add(district);
+            context.Districts.Add(district);
             await context.SaveChangesAsync();
         }
     }

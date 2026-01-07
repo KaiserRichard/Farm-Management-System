@@ -28,11 +28,13 @@
     <None Remove="Views\Supplies\" />
     <None Remove="Views\Vaccinations\" />
     <None Remove="Views\AccountManager\" />
+    <None Remove="Views\Districts \" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Animals\" />
     <Folder Include="Views\Supplies\" />
     <Folder Include="Views\Vaccinations\" />
     <Folder Include="Views\AccountManager\" />
+    <Folder Include="Views\Districts \" />
   </ItemGroup>
 </Project>

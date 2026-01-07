@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CoreBusiness.District>
+
+@{
+    ViewData["Title"] = "District Management";
+}
+
+<h2>District Management</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Code</label><br />
+        <input name="Code" />
+    </div>
+
+    <div>
+        <label>Name</label><br />
+        <input name="Name" required />
+    </div>
+
+    <br />
+    <button type="submit">Add District</button>
+</form>
+
+<hr />
+
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.Id</td>
+                <td>@d.Code</td>
+                <td>@d.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
